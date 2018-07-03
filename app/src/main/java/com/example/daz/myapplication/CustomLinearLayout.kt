@@ -17,34 +17,34 @@ class CustomLinearLayout @JvmOverloads constructor(
 
     init {
         orientation = VERTICAL
-        for (i in 1..20) {
+        for (i in 1..30) {
             val view = LayoutInflater.from(context).inflate(R.layout.item_text_view, this, false)
             view.findViewById<TextView>(R.id.text_view_woo_woo).text = i.toString()
             addView(view)
         }
         val button = Button(context)
         button.setOnClickListener {
-            removeViews()
+            removeTenViews()
         }
         addView(button)
     }
 
-    override fun onAttachedToWindow() {
-        super.onAttachedToWindow()
-    }
-
     private var removing: Boolean = false
 
-    private fun removeViews() {
+    private fun removeTenViews() {
         removing = true
         scrollView = parent.parent as ScrollView
-        for (i in 17 downTo 7) {
+        val top = top
+        val count = childCount
+        for (i in (count -2 ) downTo (count - 11) ) {
+            Log.e("woot", "Child index is: "+i)
             var view = getChildAt(i)
             view?.run {
                 Log.e("woot", "height of the view is:" + view.height)
                 scrollView.post {scrollView.scrollBy(0, -view.height)}
+//                scrollView.smoothScrollTo(0, top + viewTop)
+                removeView(getChildAt(i))
             }
-            removeView(getChildAt(i))
         }
         removing = false
     }
