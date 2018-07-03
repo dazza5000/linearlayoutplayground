@@ -5,19 +5,34 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:text="top"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <com.example.daz.myapplication.CustomLinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        <com.example.daz.myapplication.CustomLinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:text="bottom"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="top"/>
 
+        <com.example.daz.myapplication.CustomLinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="bottom"/>
+
+        <com.example.daz.myapplication.CustomLinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!" />
+    </android.support.v7.widget.LinearLayoutCompat>
 </ScrollView>
